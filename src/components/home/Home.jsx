@@ -1,4 +1,5 @@
 import React from "react";
+import Name from "../madrasaName/Name";
 import Navbar from "../navbar/Navbar";
 import styles from "./Home.module.css";
 
@@ -15,14 +16,7 @@ function Home() {
           style={{ opacity: "0.8" }}
         />
         <div className={styles.content}>
-          <Navbar />
-          <h1>Welcome</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-            ipsum dolor ea similique. Quos repudiandae exercitationem odio
-            placeat autem in, cupiditate at ipsa assumenda rerum laudantium
-            aspernatur amet, quod quibusdam sit! Excepturi, iusto! Asperiores
-          </p>
+          <Name />
         </div>
       </div>
     </div>
