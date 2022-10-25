@@ -3,11 +3,16 @@ import styles from "./Name.module.css";
 
 function Name() {
   return (
-    <div>
-      <h1 className={`${styles.madrasaName}  mt-5`}>
-        {" "}
+    <div className="mt-5 row p-0 m-0 ">
+      {/* <p>
         مدرسہ جامعہ دارالعلوم تعلیم القرآن باڑہ گیٹ پشاور
-      </h1>
+        <br />
+      </p> */}
+
+      <div class="content">
+        <h2> مدرسہ جامعہ دارالعلوم تعلیم القرآن </h2>
+        <h2> مدرسہ جامعہ دارالعلوم تعلیم القرآن </h2>
+      </div>
     </div>
   );
 }

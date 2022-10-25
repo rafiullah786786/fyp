@@ -1,6 +1,5 @@
 import React from "react";
 import Name from "../madrasaName/Name";
-import Navbar from "../navbar/Navbar";
 import styles from "./Home.module.css";
 
 function Home() {

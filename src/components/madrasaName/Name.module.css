@@ -1,76 +1,108 @@
-@import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
+/* * {
+    margin: 0;
+    padding: 0;
+}
 
-.madrasaName {
-    font-size: calc(15px + 12vh);
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 24px;
+}
 
-    /*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
-    0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
-  color: #fccaff; */
-    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000,
-        0 0 10px #ff8d00, 0 0 98px #ff0000;
-    color: #fff6a9;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+p {
+    font-weight: 700;
     text-align: center;
-    animation: blink 12s infinite;
-    -webkit-animation: blink 12s infinite;
+    font-size: 40px;
+    font-family: Hack, sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    letter-spacing: 5px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: shine 5s linear infinite;
+    position: relative;
+}
+
+@keyframes shine {
+    0% {
+        background-position-x: -500%;
+    }
+    100% {
+        background-position-x: 500%;
+    }
+} */
+
+/*  Checkout my other pens on  https://codepen.io/grohit/  */
+/*  Checkout my other pens on  https://codepen.io/grohit/  */
+/*  Checkout my other pens on  https://codepen.io/grohit/  */
+/*  Checkout my other pens on  https://codepen.io/grohit/  */
+/*  Checkout my other pens on  https://codepen.io/grohit/  */
+/*  Checkout my other pens on  https://codepen.io/grohit/  */
+/*  Checkout my other pens on  https://codepen.io/grohit/  */
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+
+    height: 100px;
+}
+
+.content h2 {
+    color: #fff;
+    font-size: 6em;
+    position: absolute;
+    width: 100%;
+}
+@media only screen and (max-width: 1080px) {
+    .content h2 {
+        font-size: 4em;
+    }
 }
 @media only screen and (max-width: 850px) {
-    .madrasaName {
-        font-size: calc(10px + 7vh);
+    .content h2 {
+        font-size: 3em;
     }
 }
 @media only screen and (max-width: 650px) {
-    .madrasaName {
-        font-size: calc(7px + 4vh);
+    .content h2 {
+        font-size: 2em;
     }
 }
 
-@-webkit-keyframes blink {
-    20%,
-    24%,
-    55% {
-        color: #111;
-        text-shadow: none;
-    }
-
-    0%,
-    19%,
-    21%,
-    23%,
-    25%,
-    54%,
-    56%,
-    100% {
-        /*     color: #fccaff;
-    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
-      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
-        text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000,
-            0 0 10px #ff8d00, 0 0 98px #ff0000;
-        color: #fff6a9;
-    }
+.content h2:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px #03a9f4;
 }
 
-@keyframes blink {
-    20%,
-    24%,
-    55% {
-        color: #111;
-        text-shadow: none;
+.content h2:nth-child(2) {
+    color: #03a9f4;
+    animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0%,
+    100% {
+        clip-path: polygon(0% 45%, 16% 44%, 33% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
     }
 
-    0%,
-    19%,
-    21%,
-    23%,
-    25%,
-    54%,
-    56%,
-    100% {
-        /*     color: #fccaff;
-    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
-      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
-        text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000,
-            0 0 10px #ff8d00, 0 0 98px #ff0000;
-        color: #fff6a9;
+    50% {
+        clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
     }
 }
