@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.module.css";
 import React from "react";
-import ReactDOM from "react-dom";
 import logo from "../../img/logo.png";
 
 function Navbar() {
