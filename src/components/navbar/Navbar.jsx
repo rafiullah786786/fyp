@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import "./Navbar.module.css";
+import "./Navbar.css";
 import React from "react";
 import logo from "../../img/logo.png";
 

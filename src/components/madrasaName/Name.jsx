@@ -1,10 +1,10 @@
 import React from "react";
-import "./Name.module.css";
+import "./Name.css";
 
 function Name() {
   return (
     <div className="mt-5 row p-0 m-0 ">
-      <div className="content">
+      <div className="content col-md-12 p-0">
         <h2> مدرسہ جامعہ دارالعلوم تعلیم القرآن </h2>
         <h2> مدرسہ جامعہ دارالعلوم تعلیم القرآن </h2>
       </div>

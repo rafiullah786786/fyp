@@ -13,7 +13,7 @@ form {
   padding: 16px;
   width: 320px;
   margin: 0 auto;
-  width: 675px;
+  width: 100%;
 }
 
 .segment {
@@ -60,4 +60,4 @@ form {
 .input-group .label {
   margin: 0;
   flex: 1;
-}/*# sourceMappingURL=Admission.module.css.map */
+}/*# sourceMappingURL=Admission.css.map */
