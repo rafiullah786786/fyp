@@ -3,32 +3,50 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
 import React from "react";
 import logo from "../../img/logo.png";
-
-function Navbar() {
+import { Link } from "react-router-dom";
+function Navbar(props) {
   const navRef = useRef();
 
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive_nav");
+
+    props.data(false);
+  };
+  const closeNavbar = () => {
+    navRef.current.classList.toggle("responsive_nav");
+    props.data(true);
   };
 
   return (
     <header className="row p-0 m-0">
-      <img
-        style={{ width: "70px", height: "70px", marginLeft: "10px" }}
-        src={logo}
-        alt=""
-      />
+      <Link to="/">
+        <img
+          style={{ width: "70px", height: "70px", marginLeft: "10px" }}
+          src={logo}
+          alt=""
+        />
+      </Link>
       <nav
         ref={navRef}
         className="font-weight-bold  "
         style={{ fontSize: "19px" }}
       >
-        <a href="/#">رابطہ</a>
-        <a href="/#">داخلہ</a>
-        <a href="/#">مدرسے کے بارے میں</a>
-        <a href="/#">کورسز</a>
-        <a href="/#">کتابیں</a>
-        <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+        <Link to="/about" onClick={closeNavbar}>
+          مدرسے کے بارے میں
+        </Link>
+        <Link to="/admission" onClick={closeNavbar}>
+          داخلہ
+        </Link>
+        <Link to="/courses" onClick={closeNavbar}>
+          کورسز
+        </Link>
+        <Link to="/books" onClick={closeNavbar}>
+          کتابیں
+        </Link>
+        <Link to="/contact" onClick={closeNavbar}>
+          رابطہ
+        </Link>
+        <button className="nav-btn nav-close-btn" onClick={closeNavbar}>
           <FaTimes />
         </button>
       </nav>
