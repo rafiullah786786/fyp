@@ -34,7 +34,7 @@ function Navbar(props) {
         <Link to="/about" onClick={closeNavbar}>
           مدرسے کے بارے میں
         </Link>
-        <Link to="/admission" onClick={closeNavbar}>
+        <Link to="admission/welcomePage" onClick={closeNavbar}>
           داخلہ
         </Link>
         <Link to="/courses" onClick={closeNavbar}>
@@ -45,6 +45,9 @@ function Navbar(props) {
         </Link>
         <Link to="/contact" onClick={closeNavbar}>
           رابطہ
+        </Link>
+        <Link to="/students" onClick={closeNavbar}>
+          طلباء
         </Link>
         <button className="nav-btn nav-close-btn" onClick={closeNavbar}>
           <FaTimes />
