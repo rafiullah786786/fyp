@@ -4,20 +4,16 @@ import { Link, Outlet } from "react-router-dom";
 function Admission() {
   return (
     <div>
-      <div className="admissionBtn">
-        <Link className="btn btn-primary m-5" to="/admission/welcomePage">
-          {" "}
-          rolus for apply{" "}
-        </Link>
+      <div className="col-sm-12 p-0 m-0 text-center ">
         <Link
           className="btn btn-primary m-5"
           to="/admission/hifzEQuranStudents"
         >
-          hefz{" "}
+          شعبہ حفظ القرآن الکریم
         </Link>
-        <Link className="btn btn-primary m-5" to="/admission/ilmStudents">
+        <Link className="btn btn-primary m-4" to="/admission/ilmStudents">
           {" "}
-          ilm{" "}
+          شعبہ درجہ کتب
         </Link>
       </div>
       <Outlet />

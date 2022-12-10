@@ -13,12 +13,16 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import WelcomePage from "./components/form/welcomePage/WelcomePage";
 import HifzEQuranStudents from "./components/form/hifzEQuranStudents/HifzEQuranStudents";
 import IlmStudents from "./components/form/ilmstudents/IlmStudents";
+import Ilm from "./components/students/ilmStudents/Ilm";
+import Hifz from "./components/students/hifzStudents/Hifz";
+import StudentsWelcome from "./components/students/studentsWelcomePage/StudentsWelcome";
 
 function App() {
   const [isOpen, setIsOpen] = useState(true);
   const openData = (data) => {
     setIsOpen(data);
   };
+  console.log(isOpen);
 
   return (
     // <div className="App container-fluid p-0">
@@ -48,7 +52,14 @@ function App() {
 
         <Route path="courses" element={isOpen && <Courses />} />
         <Route path="books" element={isOpen && <Books />} />
-        <Route path="students" element={isOpen && <Students />} />
+        <Route path="students" element={isOpen && <Students />}>
+          <Route
+            path="studentsWelcome"
+            element={isOpen && <StudentsWelcome />}
+          />
+          <Route path="ilm" element={isOpen && <Ilm />} />
+          <Route path="hifz" element={isOpen && <Hifz />} />
+        </Route>
         <Route path="*" element={isOpen && <Error />} />
       </Routes>
     </Router>

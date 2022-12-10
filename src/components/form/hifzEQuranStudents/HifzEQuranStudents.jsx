@@ -23,6 +23,7 @@ import { Link } from "react-router-dom";
 function HifzEQuranStudents() {
   const [newName, setNewName] = useState("");
   const [newFatherName, setNewfatherName] = useState("");
+  const [monthlyCost, setMonthlyCost] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [address, setAddress] = useState("");
   const [resident, setResident] = useState("");
@@ -50,6 +51,7 @@ function HifzEQuranStudents() {
     addDoc(studentCollection, {
       name: newName,
       fatherName: newFatherName,
+      monthlyCost: monthlyCost,
       dateOfBirth: dateOfBirth,
       address: address,
       resident: resident,
@@ -85,7 +87,7 @@ function HifzEQuranStudents() {
             <h1> شعبہ حفظ القرآن الکریم داخلہ فارم</h1>
           </div>
           <label className="label">
-            Full Name {"    "}الاسم *
+            نام طالب علم
             <input
               required
               className="input"
@@ -97,7 +99,7 @@ function HifzEQuranStudents() {
             />
           </label>
           <label className="label">
-            Father Name اسم الوالد*
+            ولدیت
             <input
               required
               className="input"
@@ -105,6 +107,18 @@ function HifzEQuranStudents() {
               placeholder="اپنے والد کا نام درج کریں۔"
               onChange={(event) => {
                 setNewfatherName(event.target.value);
+              }}
+            />
+          </label>
+          <label className="label">
+            ماہانہ خرچہ جامعہ کو ادا کرتا رھونگا*
+            <input
+              required
+              className="input"
+              type="text"
+              placeholder="ماہانہ خرچہ جامعہ کو "
+              onChange={(event) => {
+                setMonthlyCost(event.target.value);
               }}
             />
           </label>
@@ -121,7 +135,7 @@ function HifzEQuranStudents() {
             />
           </label>
           <label className="label">
-            Address العنوان
+            Address پتہ
             <input
               required
               className="input"
@@ -252,7 +266,7 @@ function HifzEQuranStudents() {
             }}
           /> */}
           {/* /////////////////////////////////////////////////////////////////////////////////////////// */}
-          <Link onClick={createStudent} className="btn btn-primary">
+          <Link onClick={createStudent} className="btn btn-primary m-4">
             جمع کرائیں
           </Link>
         </form>

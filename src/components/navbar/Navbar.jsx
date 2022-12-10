@@ -32,7 +32,7 @@ function Navbar(props) {
         style={{ fontSize: "19px" }}
       >
         <Link to="/about" onClick={closeNavbar}>
-          مدرسے کے بارے میں
+          قواعدِ وضوابط جامعہ
         </Link>
         <Link to="admission/welcomePage" onClick={closeNavbar}>
           داخلہ
@@ -46,7 +46,7 @@ function Navbar(props) {
         <Link to="/contact" onClick={closeNavbar}>
           رابطہ
         </Link>
-        <Link to="/students" onClick={closeNavbar}>
+        <Link to="/students/studentsWelcome " onClick={closeNavbar}>
           طلباء
         </Link>
         <button className="nav-btn nav-close-btn" onClick={closeNavbar}>

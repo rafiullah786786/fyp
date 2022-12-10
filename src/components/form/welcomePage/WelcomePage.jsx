@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 function WelcomePage() {
   return (
     <div>
-      welcome to apply page please select the course where you want to apply................
+      <h1 className="text-center">اپنا شعبہ منتخب کریں</h1>
     </div>
-  )
+  );
 }
 
-export default WelcomePage
+export default WelcomePage;
