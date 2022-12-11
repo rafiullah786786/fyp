@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 function Contact() {
   return (
-    <div className="mt-5  ">
-      <div className="row m-0 p-0">
-        <div className="col-sm-3  "></div>
-        <div className="col-sm-6 text-center ">
-          <table class="table  ">
+    <div className="  ">
+      <div className="row m-0 p-0 mt-5">
+        <div className="col-sm-3 m-0 p-0  "></div>
+        <div className="col-sm-6 m-0 p-0 text-center ">
+          <table class="table   " style={{ width: "100%" }}>
             <tbody>
               <tr className="table-primary">
                 <th scope="row">
@@ -74,7 +74,7 @@ function Contact() {
             </tbody>
           </table>
         </div>
-        <div className="col-sm-3"></div>
+        <div className="col-sm-3 m-0 p-0"></div>
       </div>
     </div>
   );
