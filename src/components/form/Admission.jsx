@@ -8,10 +8,15 @@ function Admission() {
         <Link
           className="btn btn-primary m-5"
           to="/admission/hifzEQuranStudents"
+          style={{ fontSize: "20px" }}
         >
           شعبہ حفظ القرآن الکریم
         </Link>
-        <Link className="btn btn-primary m-4" to="/admission/ilmStudents">
+        <Link
+          className="btn btn-primary m-4"
+          to="/admission/ilmStudents"
+          style={{ fontSize: "20px" }}
+        >
           {" "}
           شعبہ درجہ کتب
         </Link>

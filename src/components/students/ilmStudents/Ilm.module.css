@@ -143,26 +143,36 @@
     .tdStyle:nth-of-type(6)::before {
         content: "مقیم";
     }
-
     .tdStyle:nth-of-type(7)::before {
-        content: "فارم (ب) نمبر";
-    }
-    .tdStyle:nth-of-type(8)::before {
-        content: " حفظ پارے 1۔30";
-    }
-    .tdStyle:nth-of-type(9)::before {
         content: "سابقہ مدرسہ کا نام و مکمل پتہ";
     }
-    .tdStyle:nth-of-type(10)::before {
-        content: "سابقہ مدرسہ کا رابطہ نمبر";
+
+    .tdStyle:nth-of-type(8)::before {
+        content: "   سابقہ مدرسہ کا رابطہ نمبر";
     }
-    .tdStyle:nth-of-type(11)::before {
+    .tdStyle:nth-of-type(9)::before {
         content: "عصری تعلیم درجہ";
     }
+
+    .tdStyle:nth-of-type(10)::before {
+        content: " انسٹی ٹیوٹ کا نام اور پتہ";
+    }
+    .tdStyle:nth-of-type(11)::before {
+        content: "  سکول کا رابطہ نمبر";
+    }
     .tdStyle:nth-of-type(12)::before {
-        content: "انسٹی ٹیوٹ کا نام اور پتہ";
+        content: "   آخری پاس کردہ درجہ";
     }
     .tdStyle:nth-of-type(13)::before {
-        content: "سکول کا رابطہ نمبر";
+        content: " نمبرات وتقدیر";
+    }
+    .tdStyle:nth-of-type(14)::before {
+        content: "  طالب علم/سرپرست کا شناختی کارڈ نمبر";
+    }
+    .tdStyle:nth-of-type(15)::before {
+        content: "والد/سرپرست کا رابطہ نمبر";
+    }
+    .tdStyle:nth-of-type(16)::before {
+        content: "  والد کا پیشہ";
     }
 }

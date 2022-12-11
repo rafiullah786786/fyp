@@ -32,11 +32,11 @@ function IlmStudents() {
   const [educationLevel, setEducationLevel] = useState("");
   const [schoolName, setSchoolName] = useState("");
   const [schoolContactNumber, setSchoolContact] = useState("");
-  const [madrasaClass, setMadrasaClass] = useState("");
   const [marks, setMarks] = useState("");
   const [fatherOccupation, setFatherOccupation] = useState("");
   const [nic, setNic] = useState("");
   const [contact, setContact] = useState("");
+  const [madrasaClass, setMadrasaClass] = useState("");
 
   // const [imageUpload, setImageUpload] = useState(null);
   // const [imageUrls, setImageUrls] = useState([]);
@@ -291,18 +291,6 @@ function IlmStudents() {
               className="input"
               type="text"
               placeholder=" 0333 1111111 "
-              onChange={(event) => {
-                setContact(event.target.value);
-              }}
-            />
-          </label>
-          <label className="label">
-            والد/سرپرست کا رابطہ نمبر
-            <input
-              required
-              className="input"
-              type="text"
-              placeholder=" 11101-000000-0 "
               onChange={(event) => {
                 setContact(event.target.value);
               }}
