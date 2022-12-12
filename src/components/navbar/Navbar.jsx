@@ -40,9 +40,6 @@ function Navbar(props) {
         <Link to="/courses" onClick={closeNavbar}>
           کورسز
         </Link>
-        <Link to="/books" onClick={closeNavbar}>
-          کتابیں
-        </Link>
         <Link to="/contact" onClick={closeNavbar}>
           رابطہ
         </Link>

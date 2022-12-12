@@ -8,7 +8,7 @@ function Contact() {
       <div className="row m-0 p-0 mt-5">
         <div className="col-sm-3 m-0 p-0  "></div>
         <div className="col-sm-6 m-0 p-0 text-center ">
-          <table class="table   " style={{ width: "100%" }}>
+          <table class="table    " style={{ width: "100%" }}>
             <tbody>
               <tr className="table-primary">
                 <th scope="row">
@@ -29,7 +29,7 @@ function Contact() {
                     <path d="M12.999,8c2.103,0,3,0.897,3,3h2c0-3.225-1.775-5-5-5V8z"></path>
                   </svg>
                 </th>
-                <td>03009006295</td>
+                <td>0300 9006295</td>
               </tr>
               <tr style={{ backgroundColor: "rgba(255, 99, 71, 0.2)" }}>
                 <th scope="row">
@@ -53,26 +53,37 @@ function Contact() {
                 </th>
                 <td>0300 9006295</td>
               </tr>
-              <tr className="table-info">
-                <th scope="row">
-                  <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 1024 1024"
-                    height="28px"
-                    width="28px"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M477.5 536.3L135.9 270.7l-27.5-21.4 27.6 21.5V792h752V270.8L546.2 536.3a55.99 55.99 0 0 1-68.7 0z"></path>
-                    <path d="M876.3 198.8l39.3 50.5-27.6 21.5 27.7-21.5-39.3-50.5z"></path>
-                    <path d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-94.5 72.1L512 482 190.5 232.1h643zm54.5 38.7V792H136V270.8l-27.6-21.5 27.5 21.4 341.6 265.6a55.99 55.99 0 0 0 68.7 0L888 270.8l27.6-21.5-39.3-50.5h.1l39.3 50.5-27.7 21.5z"></path>
-                  </svg>
-                </th>
-                <td>jamiataleemulquranmadrasa@gmail.com</td>
-              </tr>
             </tbody>
           </table>
+          <h3 className="mt-3">facebook</h3>
+          <a href="https://www.facebook.com/profile.php?id=100064101066308&mibextid=ZbWKwL">
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 1024 1024"
+              height="40px"
+              width="40px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-92.4 233.5h-63.9c-50.1 0-59.8 23.8-59.8 58.8v77.1h119.6l-15.6 120.7h-104V912H539.2V602.2H434.9V481.4h104.3v-89c0-103.3 63.1-159.6 155.3-159.6 44.2 0 82.1 3.3 93.2 4.8v107.9z"></path>
+            </svg>
+          </a>
+          <br />
+          <h3 className="mt-3">Email</h3>
+          <a href="mailto:jamiataleemulquranmadrasa@gmail.com">
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              height="40px"
+              width="40px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
+            </svg>
+          </a>
         </div>
         <div className="col-sm-3 m-0 p-0"></div>
       </div>

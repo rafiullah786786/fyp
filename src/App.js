@@ -8,7 +8,6 @@ import Contact from "./components/contact/Contact";
 import About from "./components/about/About";
 import Courses from "./components/courses/Courses";
 import Error from "./components/error/Error";
-import Books from "./components/books/Books";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import WelcomePage from "./components/form/welcomePage/WelcomePage";
 import HifzEQuranStudents from "./components/form/hifzEQuranStudents/HifzEQuranStudents";
@@ -51,7 +50,6 @@ function App() {
         </Route>
 
         <Route path="courses" element={isOpen && <Courses />} />
-        <Route path="books" element={isOpen && <Books />} />
         <Route path="students" element={isOpen && <Students />}>
           <Route
             path="studentsWelcome"
