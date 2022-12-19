@@ -26,6 +26,7 @@ function Navbar(props) {
           alt=""
         />
       </Link>
+
       <nav
         ref={navRef}
         className="font-weight-bold  "

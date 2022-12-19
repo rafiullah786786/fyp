@@ -20,7 +20,6 @@ function Ilm() {
     };
     getStudents();
   }, []);
-  console.log(students);
   return (
     <div>
       <h1 className="text-center mt-5"> شعبہ درجہ کتب طلباء</h1>

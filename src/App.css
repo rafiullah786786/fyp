@@ -79,3 +79,7 @@
     color: #fff6a9;
   }
 }
+.mainPageBtn:hover {
+  box-shadow: 10px 10px 5px rgb(61, 75, 79);
+  width: 200px;
+}

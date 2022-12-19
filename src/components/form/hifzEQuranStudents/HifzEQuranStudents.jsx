@@ -1,5 +1,7 @@
 import "./Admission.css";
 import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect } from "react";
 import { db } from "../../../FirebaseConfig";
 import {
@@ -21,6 +23,9 @@ import { storage } from "../../../FirebaseConfig";
 import { v4 } from "uuid";
 import { Link } from "react-router-dom";
 function HifzEQuranStudents() {
+  ////////////////////////////////////////////////////////////////////////////////
+  const [students, setStudents] = useState([]);
+  ///////////////////////////////////////////////////////////////////////////////////
   const [newName, setNewName] = useState("");
   const [newFatherName, setNewfatherName] = useState("");
   const [monthlyCost, setMonthlyCost] = useState("");
@@ -34,48 +39,56 @@ function HifzEQuranStudents() {
   const [educationLevel, setEducationLevel] = useState("");
   const [schoolName, setSchoolName] = useState("");
   const [schoolContactNumber, setSchoolContact] = useState("");
-  // const [imageUpload, setImageUpload] = useState(null);
-  // const [imageUrls, setImageUrls] = useState([]);
 
   const studentCollection = collection(db, "hifzEQuranStudents");
+  //////////////////////////geting students from server///////////////////////////////
+  useEffect(() => {
+    const getStudents = async () => {
+      const data = await getDocs(studentCollection);
+      setStudents(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getStudents();
+  }, []);
   /////////////////////////////////////////////////////////////////////creat a students //////////////////////
-  // const imagesListRef = ref(storage, "images/");
   const createStudent = () => {
-    // if (imageUpload == null) return;
-    // const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
-    // uploadBytes(imageRef, imageUpload).then((snapshot) => {
-    //   getDownloadURL(snapshot.ref).then((url) => {
-    //     setImageUrls((prev) => [...prev, url]);
-    //   });
-    // });
-    addDoc(studentCollection, {
-      name: newName,
-      fatherName: newFatherName,
-      monthlyCost: monthlyCost,
-      dateOfBirth: dateOfBirth,
-      address: address,
-      resident: resident,
-      crc: crc,
-      juz: juz,
-      prevMadrasaName: prevMadrasaName,
-      prevMadrasaContactNumber: prevMadrasaContactNumber,
-      educationLevel: educationLevel,
-      schoolName: schoolName,
-      schoolContactNumber: schoolContactNumber,
-    });
+    for (let i = 0; i < students.length; i++) {
+      if (students[i].name == newName || students[i].name == newFatherName) {
+        toast("آپ پھلے سے داخلہ کر چکے ہیں۔یا آپ کےانٹرنیٹ میں مسلہ ھے۔");
+      } else if (
+        newName == "" ||
+        newFatherName == "" ||
+        monthlyCost == "" ||
+        dateOfBirth == "" ||
+        address == "" ||
+        resident == "" ||
+        crc == "" ||
+        juz == "" ||
+        prevMadrasaName == "" ||
+        setPrevMadrasaContactNumber == "" ||
+        educationLevel == "" ||
+        schoolName == "" ||
+        schoolContactNumber == ""
+      ) {
+        toast("آپ کے چند فیلڈ خالی ہے۔ اس کو فیل کریں۔");
+      } else {
+        addDoc(studentCollection, {
+          name: newName,
+          fatherName: newFatherName,
+          monthlyCost: monthlyCost,
+          dateOfBirth: dateOfBirth,
+          address: address,
+          resident: resident,
+          crc: crc,
+          juz: juz,
+          prevMadrasaName: prevMadrasaName,
+          prevMadrasaContactNumber: prevMadrasaContactNumber,
+          educationLevel: educationLevel,
+          schoolName: schoolName,
+          schoolContactNumber: schoolContactNumber,
+        });
+      }
+    }
   };
-
-  // useEffect(() => {
-  //   listAll(imagesListRef).then((response) => {
-  //     response.items.forEach((item) => {
-  //       getDownloadURL(item).then((url) => {
-  //         setImageUrls((prev) => [...prev, url]);
-  //       });
-  //     });
-  //   });
-  // }, []);
-
-  // console.log(imageUrls);
 
   return (
     <div className="row p-0 m-0">
