@@ -9,22 +9,26 @@ import {
   doc,
 } from "firebase/firestore";
 import classes from "./Ilm.module.css";
+import Loader from "../../loader/Loader.js";
 
 function Ilm() {
   const [students, setStudents] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   const studentCollection = collection(db, "ilmstudents");
   useEffect(() => {
     const getStudents = async () => {
       const data = await getDocs(studentCollection);
       setStudents(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      setLoading(false);
     };
     getStudents();
   }, []);
   return (
     <div>
-      <h1 className="text-center mt-5"> شعبہ درجہ کتب طلباء</h1>
+      <h1 className="text-center mt-2"> شعبہ درجہ کتب طلباء</h1>
       <div className={classes.tableContainer}>
-        <table className={classes.tableStyle}>
+        <table className={`classes.tableStyle`} style={{ width: "100%" }}>
           <thead className={classes.theadStyle}>
             <tr className={classes.trStyle}>
               <th className={classes.thStyle} scope="col">
@@ -80,38 +84,45 @@ function Ilm() {
             </tr>
           </thead>
 
-          <tbody className={classes.tbodyStyle}>
-            {students.map((student) => {
-              return (
-                <tr className={classes.trStyle}>
-                  <td className={classes.tdStyle}>{student.name}</td>
-                  <td className={classes.tdStyle}>{student.fatherName}</td>
-                  <td className={classes.tdStyle}>{student.monthlyCost}</td>
-                  <td className={classes.tdStyle}>{student.dateOfBirth}</td>
-                  <td className={classes.tdStyle}>{student.address}</td>
-                  <td className={classes.tdStyle}>{student.resident}</td>
-                  <td className={classes.tdStyle}>{student.prevMadrasaName}</td>
-                  <td className={classes.tdStyle}>
-                    {student.prevMadrasaContactNumber}
-                  </td>
-                  <td className={classes.tdStyle}>{student.educationLevel}</td>
-                  <td className={classes.tdStyle}>{student.schoolName}</td>
-                  <td className={classes.tdStyle}>
-                    {student.schoolContactNumber}
-                  </td>
-                  <td className={classes.tdStyle}>{student.madrasaClass}</td>
-                  <td className={classes.tdStyle}>{student.marks}</td>
-                  <td className={classes.tdStyle}>{student.nic}</td>
-                  <td className={classes.tdStyle}>{student.contact}</td>
-                  <td className={classes.tdStyle}>
-                    {student.fatherOccupation}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
+          {!loading && (
+            <tbody className={classes.tbodyStyle}>
+              {students.map((student) => {
+                return (
+                  <tr className={classes.trStyle}>
+                    <td className={classes.tdStyle}>{student.name}</td>
+                    <td className={classes.tdStyle}>{student.fatherName}</td>
+                    <td className={classes.tdStyle}>{student.monthlyCost}</td>
+                    <td className={classes.tdStyle}>{student.dateOfBirth}</td>
+                    <td className={classes.tdStyle}>{student.address}</td>
+                    <td className={classes.tdStyle}>{student.resident}</td>
+                    <td className={classes.tdStyle}>
+                      {student.prevMadrasaName}
+                    </td>
+                    <td className={classes.tdStyle}>
+                      {student.prevMadrasaContactNumber}
+                    </td>
+                    <td className={classes.tdStyle}>
+                      {student.educationLevel}
+                    </td>
+                    <td className={classes.tdStyle}>{student.schoolName}</td>
+                    <td className={classes.tdStyle}>
+                      {student.schoolContactNumber}
+                    </td>
+                    <td className={classes.tdStyle}>{student.madrasaClass}</td>
+                    <td className={classes.tdStyle}>{student.marks}</td>
+                    <td className={classes.tdStyle}>{student.nic}</td>
+                    <td className={classes.tdStyle}>{student.contact}</td>
+                    <td className={classes.tdStyle}>
+                      {student.fatherOccupation}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          )}
         </table>
       </div>
+      <div>{loading && <Loader />}</div>
     </div>
   );
 }

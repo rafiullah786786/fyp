@@ -9,21 +9,24 @@ import {
   doc,
 } from "firebase/firestore";
 import classes from "./Hifz.module.css";
+import Loader from "../../loader/Loader.js";
 
 function Hifz() {
   const [students, setStudents] = useState([]);
+  const [loading, setLoading] = useState(true);
   const studentCollection = collection(db, "hifzEQuranStudents");
   useEffect(() => {
     const getStudents = async () => {
       const data = await getDocs(studentCollection);
       setStudents(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      setLoading(true);
     };
     getStudents();
   }, []);
   console.log(students);
   return (
     <div>
-      <h1 className="text-center mt-5">شعبہ حفظ القرآن الکریم طلباء</h1>
+      <h1 className="text-center mt-3">شعبہ حفظ القرآن الکریم طلباء</h1>
       <div className={classes.tableContainer}>
         <table className={classes.tableStyle}>
           <thead className={classes.theadStyle}>
@@ -73,34 +76,40 @@ function Hifz() {
               </th>
             </tr>
           </thead>
-
-          <tbody className={classes.tbodyStyle}>
-            {students.map((student) => {
-              return (
-                <tr className={classes.trStyle}>
-                  <td className={classes.tdStyle}>{student.name}</td>
-                  <td className={classes.tdStyle}>{student.fatherName}</td>
-                  <td className={classes.tdStyle}>{student.monthlyCost}</td>
-                  <td className={classes.tdStyle}>{student.dateOfBirth}</td>
-                  <td className={classes.tdStyle}>{student.address}</td>
-                  <td className={classes.tdStyle}>{student.resident}</td>
-                  <td className={classes.tdStyle}>{student.crc}</td>
-                  <td className={classes.tdStyle}>{student.juz}</td>
-                  <td className={classes.tdStyle}>{student.prevMadrasaName}</td>
-                  <td className={classes.tdStyle}>
-                    {student.prevMadrasaContactNumber}
-                  </td>
-                  <td className={classes.tdStyle}>{student.educationLevel}</td>
-                  <td className={classes.tdStyle}>{student.schoolName}</td>
-                  <td className={classes.tdStyle}>
-                    {student.schoolContactNumber}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
+          {!loading && (
+            <tbody className={classes.tbodyStyle}>
+              {students.map((student) => {
+                return (
+                  <tr className={classes.trStyle}>
+                    <td className={classes.tdStyle}>{student.name}</td>
+                    <td className={classes.tdStyle}>{student.fatherName}</td>
+                    <td className={classes.tdStyle}>{student.monthlyCost}</td>
+                    <td className={classes.tdStyle}>{student.dateOfBirth}</td>
+                    <td className={classes.tdStyle}>{student.address}</td>
+                    <td className={classes.tdStyle}>{student.resident}</td>
+                    <td className={classes.tdStyle}>{student.crc}</td>
+                    <td className={classes.tdStyle}>{student.juz}</td>
+                    <td className={classes.tdStyle}>
+                      {student.prevMadrasaName}
+                    </td>
+                    <td className={classes.tdStyle}>
+                      {student.prevMadrasaContactNumber}
+                    </td>
+                    <td className={classes.tdStyle}>
+                      {student.educationLevel}
+                    </td>
+                    <td className={classes.tdStyle}>{student.schoolName}</td>
+                    <td className={classes.tdStyle}>
+                      {student.schoolContactNumber}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          )}
         </table>
       </div>
+      <div>{loading && <Loader />}</div>
     </div>
   );
 }

@@ -26,7 +26,7 @@ import StudentsWelcome from "./components/students/studentsWelcomePage/StudentsW
 /////////////////////////toestify //////////////////////////
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import Loader from "./components/loader/Loader.js";
 function App() {
   const [isOpen, setIsOpen] = useState(true);
   const openData = (data) => {
@@ -45,9 +45,12 @@ function App() {
 
     // </div>
     <>
+      {/* /////////////////////////// */}
+
+      {/* /////////////////////////// */}
       <Navbar data={openData} />
-      <div className="row text-center">
-        <div className="col-sm-12">
+      <div className="row text-center p-0 m-0">
+        <div className="col-sm-12 m-0 p-0">
           <button
             className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
             onClick={() => navigate("./about")}
