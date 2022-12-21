@@ -19,7 +19,7 @@ function Hifz() {
     const getStudents = async () => {
       const data = await getDocs(studentCollection);
       setStudents(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-      setLoading(true);
+      setLoading(false);
     };
     getStudents();
   }, []);
