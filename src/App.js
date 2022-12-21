@@ -49,40 +49,42 @@ function App() {
 
       {/* /////////////////////////// */}
       <Navbar data={openData} />
-      <div className="row text-center p-0 m-0">
-        <div className="col-sm-12 m-0 p-0">
-          <button
-            className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
-            onClick={() => navigate("./about")}
-          >
-            قواعدِ وضوابط جامعہ
-          </button>
-          <button
-            className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
-            onClick={() => navigate("./admission")}
-          >
-            داخلہ
-          </button>
-          <button
-            className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
-            onClick={() => navigate("./courses")}
-          >
-            کورسز
-          </button>
-          <button
-            className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
-            onClick={() => navigate("./contact")}
-          >
-            رابطہ
-          </button>
-          <button
-            className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
-            onClick={() => navigate("./students")}
-          >
-            طلباء
-          </button>
+      {isOpen && (
+        <div className="row text-center p-0 m-0">
+          <div className="col-sm-12 m-0 p-0">
+            <button
+              className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
+              onClick={() => navigate("./about")}
+            >
+              قواعدِ وضوابط جامعہ
+            </button>
+            <button
+              className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
+              onClick={() => navigate("./admission")}
+            >
+              داخلہ
+            </button>
+            <button
+              className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
+              onClick={() => navigate("./courses")}
+            >
+              کورسز
+            </button>
+            <button
+              className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
+              onClick={() => navigate("./contact")}
+            >
+              رابطہ
+            </button>
+            <button
+              className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
+              onClick={() => navigate("./students")}
+            >
+              طلباء
+            </button>
+          </div>
         </div>
-      </div>
+      )}
 
       <Routes>
         {isOpen && <Route path="/" element={isOpen && <Name />} />}
