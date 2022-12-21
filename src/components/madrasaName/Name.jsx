@@ -7,11 +7,11 @@ function Name() {
       <div className="content col-md-12 p-0">
         <h2 style={{ "text-align": "center" }}>
           {" "}
-          مدرسہ جامعہ دارالعلوم تعلیم القرآن{" "}
+          جامعہ دارالعلوم تعلیم القرآن{" "}
         </h2>
         <h2 style={{ "text-align": "center" }}>
           {" "}
-          مدرسہ جامعہ دارالعلوم تعلیم القرآن{" "}
+          جامعہ دارالعلوم تعلیم القرآن{" "}
         </h2>
       </div>
       <div className="content col-md-12 p-0 mt-5 secondName">
