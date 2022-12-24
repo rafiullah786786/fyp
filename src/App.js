@@ -5,7 +5,7 @@ import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import Name from "./components/madrasaName/Name";
 import Admission from "./components/form/Admission";
-import Students from "./components/students/Students";
+import Students from "./components/admin/Students";
 import Contact from "./components/contact/Contact";
 import About from "./components/about/About";
 import Courses from "./components/courses/Courses";
@@ -20,9 +20,9 @@ import {
 import WelcomePage from "./components/form/welcomePage/WelcomePage";
 import HifzEQuranStudents from "./components/form/hifzEQuranStudents/HifzEQuranStudents";
 import IlmStudents from "./components/form/ilmstudents/IlmStudents";
-import Ilm from "./components/students/ilmStudents/Ilm";
-import Hifz from "./components/students/hifzStudents/Hifz";
-import StudentsWelcome from "./components/students/studentsWelcomePage/StudentsWelcome";
+import Ilm from "./components/admin/ilmStudents/Ilm";
+import Hifz from "./components/admin/hifzStudents/Hifz";
+import StudentsWelcome from "./components/admin/studentsWelcomePage/StudentsWelcome";
 /////////////////////////toestify //////////////////////////
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -56,7 +56,7 @@ function App() {
               className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
               onClick={() => navigate("./about")}
             >
-              قواعدِ وضوابط جامعہ
+              قواعدِ وضوابط
             </button>
             <button
               className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
@@ -80,7 +80,7 @@ function App() {
               className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
               onClick={() => navigate("./students")}
             >
-              طلباء
+              منتظم
             </button>
           </div>
         </div>

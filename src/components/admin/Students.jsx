@@ -5,6 +5,7 @@ function Students() {
   return (
     <div>
       <div className="col-sm-12 m-0 p-0 text-center">
+        <h1>شعبہ منتخب کریں</h1>
         <Link
           className="btn btn-primary m-4"
           to="/students/hifz"

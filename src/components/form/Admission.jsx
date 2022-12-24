@@ -5,15 +5,16 @@ function Admission() {
   return (
     <div>
       <div className="col-sm-12 p-0 m-0 text-center ">
+        <h1 className="mt-3">اپنا شعبہ منتخب کریں</h1>
         <Link
-          className="btn btn-primary m-5"
+          className="btn btn-primary m-3"
           to="/admission/hifzEQuranStudents"
           style={{ fontSize: "20px" }}
         >
           شعبہ حفظ القرآن الکریم
         </Link>
         <Link
-          className="btn btn-primary m-4"
+          className="btn btn-primary m-3"
           to="/admission/ilmStudents"
           style={{ fontSize: "20px" }}
         >

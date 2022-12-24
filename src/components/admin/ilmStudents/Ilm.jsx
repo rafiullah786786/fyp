@@ -24,6 +24,12 @@ function Ilm() {
     };
     getStudents();
   }, []);
+  // code for fun of deleting students from the list of students /////////////////////
+  const deleteStudents = async (id) => {
+    const userDoc = doc(db, "ilmstudents", id);
+    await deleteDoc(userDoc);
+  };
+  // ///////////////////// ///////////////////////// /////////////////////////
   return (
     <div>
       <h1 className="text-center mt-2"> شعبہ درجہ کتب طلباء</h1>
@@ -81,6 +87,9 @@ function Ilm() {
               <th className={classes.thStyle} scope="col">
                 والد کا پیشہ
               </th>
+              <th className={classes.thStyle} scope="col">
+                اعمال
+              </th>
             </tr>
           </thead>
 
@@ -114,6 +123,16 @@ function Ilm() {
                     <td className={classes.tdStyle}>{student.contact}</td>
                     <td className={classes.tdStyle}>
                       {student.fatherOccupation}
+                    </td>
+                    <td className={classes.tdStyle}>
+                      <button
+                        className="btn btn-dark"
+                        onClick={() => {
+                          deleteStudents(student.id);
+                        }}
+                      >
+                        حذ ف کریں
+                      </button>
                     </td>
                   </tr>
                 );

@@ -45,7 +45,7 @@ function Navbar(props) {
           رابطہ
         </Link>
         <Link to="/students/studentsWelcome " onClick={closeNavbar}>
-          طلباء
+          منتظم
         </Link>
         <button className="nav-btn nav-close-btn" onClick={closeNavbar}>
           <FaTimes />

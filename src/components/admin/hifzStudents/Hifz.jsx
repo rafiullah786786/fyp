@@ -24,6 +24,12 @@ function Hifz() {
     getStudents();
   }, []);
   console.log(students);
+  // code for fun of deleting students from the list of students /////////////////////
+  const deleteStudents = async (id) => {
+    const userDoc = doc(db, "hifzEQuranStudents", id);
+    await deleteDoc(userDoc);
+  };
+  // ///////////////////// ///////////////////////// /////////////////////////
   return (
     <div>
       <h1 className="text-center mt-3">شعبہ حفظ القرآن الکریم طلباء</h1>
@@ -74,6 +80,9 @@ function Hifz() {
               <th className={classes.thStyle} scope="col">
                 سکول کا رابطہ نمبر
               </th>
+              <th className={classes.thStyle} scope="col">
+                اعمال
+              </th>
             </tr>
           </thead>
           {!loading && (
@@ -101,6 +110,16 @@ function Hifz() {
                     <td className={classes.tdStyle}>{student.schoolName}</td>
                     <td className={classes.tdStyle}>
                       {student.schoolContactNumber}
+                    </td>
+                    <td className={classes.tdStyle}>
+                      <button
+                        className="btn btn-dark"
+                        onClick={() => {
+                          deleteStudents(student.id);
+                        }}
+                      >
+                        حذ ف کریں
+                      </button>
                     </td>
                   </tr>
                 );
