@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import {} from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
@@ -27,57 +26,59 @@ import StudentsWelcome from "./components/admin/studentsWelcomePage/StudentsWelc
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "./components/loader/Loader.js";
+import AdmissionOpen from "./components/admin/admissionOpen/AdmissionOpen";
+
+import AdmissionBanner from "./components/admin/admissionBanner/AdmissionBanner";
 function App() {
   const [isOpen, setIsOpen] = useState(true);
+  // const [admissionState, setAdmissionState] = useState("");
+  // const studentCollection = collection(db, "admissionOpen");
   const openData = (data) => {
     setIsOpen(data);
   };
   const navigate = useNavigate();
-  const contactPageHandler = () => {};
+  // geting admission open state from server to create a admission open message
+  // useEffect(() => {
+  //   const getStudents = async () => {
+  //     const data = await getDocs(studentCollection);
+  //     setAdmissionState(data.docs.map((doc) => ({ ...doc.data() })));
+  //   };
+  //   getStudents();
+  // }, []);
+  // console.log(admissionState);
 
   return (
-    // <div className="App container-fluid p-0">
-    //
-
-    //   <Students />
-    //
-    //   <Admission />
-
-    // </div>
     <>
-      {/* /////////////////////////// */}
-
-      {/* /////////////////////////// */}
       <Navbar data={openData} />
       {isOpen && (
         <div className="row text-center p-0 m-0">
           <div className="col-sm-12 m-0 p-0">
             <button
-              className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
+              className="btn btn-primary m-3  rounded-circle    mainPageBtn  "
               onClick={() => navigate("./about")}
             >
               قواعدِ وضوابط
             </button>
             <button
-              className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
+              className="btn btn-primary m-3  rounded-circle     mainPageBtn "
               onClick={() => navigate("./admission")}
             >
               داخلہ
             </button>
             <button
-              className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
+              className="btn btn-primary m-3  rounded-circle    mainPageBtn "
               onClick={() => navigate("./courses")}
             >
               کورسز
             </button>
             <button
-              className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
+              className="btn btn-primary m-3  rounded-circle     mainPageBtn "
               onClick={() => navigate("./contact")}
             >
               رابطہ
             </button>
             <button
-              className="btn btn-primary m-3  rounded-circle   bg-transparent text-dark mainPageBtn "
+              className="btn btn-primary m-3  rounded-circle     mainPageBtn "
               onClick={() => navigate("./students")}
             >
               منتظم
@@ -88,6 +89,7 @@ function App() {
 
       <Routes>
         {isOpen && <Route path="/" element={isOpen && <Name />} />}
+
         <Route path="contact" element={isOpen && <Contact />} />
         <Route path="about" element={isOpen && <About />} />
         <Route path="admission" element={isOpen && <Admission />}>
@@ -107,6 +109,7 @@ function App() {
           />
           <Route path="ilm" element={isOpen && <Ilm />} />
           <Route path="hifz" element={isOpen && <Hifz />} />
+          <Route path="admissionOpen" element={isOpen && <AdmissionOpen />} />
         </Route>
         <Route path="*" element={isOpen && <Error />} />
       </Routes>

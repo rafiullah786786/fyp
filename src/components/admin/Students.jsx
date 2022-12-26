@@ -21,6 +21,14 @@ function Students() {
           {" "}
           شعبہ درجہ کتب طلباء
         </Link>
+        <Link
+          className="btn btn-primary m-4"
+          to="/students/admissionOpen"
+          style={{ fontSize: "20px" }}
+        >
+          {" "}
+          داخلہ کا آغاز
+        </Link>
       </div>
       <Outlet />
     </div>
