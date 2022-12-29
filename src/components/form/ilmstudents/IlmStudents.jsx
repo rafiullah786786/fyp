@@ -307,6 +307,7 @@ function IlmStudents() {
                 setMadrasaClass(event.target.value);
               }}
             >
+              <option value="select the level">select the level</option>
               <option value={levels[0]}>{levels[0]}</option>
               <option value={levels[1]}>{levels[1]}</option>
               <option value={levels[2]}>{levels[2]}</option>
