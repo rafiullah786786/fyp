@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { db } from "../../../FirebaseConfig.js";
+import { db } from "../../../../FirebaseConfig.js";
 import {
   collection,
   getDocs,
@@ -9,9 +9,9 @@ import {
   doc,
 } from "firebase/firestore";
 import classes from "./Ilm.module.css";
-import Loader from "../../loader/Loader.js";
+import Loader from "../../../loader/Loader.js";
 
-function Ilm() {
+function Ilm2nd() {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -32,7 +32,7 @@ function Ilm() {
   // ///////////////////// ///////////////////////// /////////////////////////
   return (
     <div>
-      <h1 className="text-center mt-2"> شعبہ درجہ کتب طلباء</h1>
+      <h1 className="text-center mt-2"> درجہ ثانیہ</h1>
       <div className={classes.tableContainer}>
         <table className={`classes.tableStyle`} style={{ width: "100%" }}>
           <thead className={classes.theadStyle}>
@@ -146,4 +146,4 @@ function Ilm() {
   );
 }
 
-export default Ilm;
+export default Ilm2nd;

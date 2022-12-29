@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { db } from "../../../FirebaseConfig.js";
+import { db } from "../../../../FirebaseConfig.js";
 import {
   collection,
   getDocs,
@@ -8,13 +8,14 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
-import classes from "./Hifz.module.css";
-import Loader from "../../loader/Loader.js";
+import classes from "./Ilm.module.css";
+import Loader from "../../../loader/Loader.js";
 
-function Hifz() {
+function Ilm5th() {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
-  const studentCollection = collection(db, "hifzEQuranStudents");
+
+  const studentCollection = collection(db, "ilmstudents");
   useEffect(() => {
     const getStudents = async () => {
       const data = await getDocs(studentCollection);
@@ -23,18 +24,18 @@ function Hifz() {
     };
     getStudents();
   }, []);
-  console.log(students);
+
   // code for fun of deleting students from the list of students /////////////////////
   const deleteStudents = async (id) => {
-    const userDoc = doc(db, "hifzEQuranStudents", id);
+    const userDoc = doc(db, "ilmstudents", id);
     await deleteDoc(userDoc);
   };
   // ///////////////////// ///////////////////////// /////////////////////////
   return (
     <div>
-      <h1 className="text-center mt-3">شعبہ حفظ القرآن الکریم طلباء</h1>
+      <h1 className="text-center mt-2">درجہ خامسہ</h1>
       <div className={classes.tableContainer}>
-        <table className={classes.tableStyle}>
+        <table className={`classes.tableStyle`} style={{ width: "100%" }}>
           <thead className={classes.theadStyle}>
             <tr className={classes.trStyle}>
               <th className={classes.thStyle} scope="col">
@@ -56,14 +57,6 @@ function Hifz() {
                 مقیم
               </th>
               <th className={classes.thStyle} scope="col">
-                {" "}
-                فارم (ب) نمبر
-              </th>
-              <th className={classes.thStyle} scope="col">
-                {" "}
-                حفظ پارے 1۔30
-              </th>
-              <th className={classes.thStyle} scope="col">
                 سابقہ مدرسہ کا نام و مکمل پتہ
               </th>
               <th className={classes.thStyle} scope="col">
@@ -81,10 +74,26 @@ function Hifz() {
                 سکول کا رابطہ نمبر
               </th>
               <th className={classes.thStyle} scope="col">
+                آخری پاس کردہ درجہ
+              </th>
+              <th className={classes.thStyle} scope="col">
+                نمبرات وتقدیر
+              </th>
+              <th className={classes.thStyle} scope="col">
+                طالب علم/سرپرست کا شناختی کارڈ نمبر
+              </th>
+              <th className={classes.thStyle} scope="col">
+                والد/سرپرست کا رابطہ نمبر
+              </th>
+              <th className={classes.thStyle} scope="col">
+                والد کا پیشہ
+              </th>
+              <th className={classes.thStyle} scope="col">
                 اعمال
               </th>
             </tr>
           </thead>
+
           {!loading && (
             <tbody className={classes.tbodyStyle}>
               {students.map((student) => {
@@ -96,8 +105,6 @@ function Hifz() {
                     <td className={classes.tdStyle}>{student.dateOfBirth}</td>
                     <td className={classes.tdStyle}>{student.address}</td>
                     <td className={classes.tdStyle}>{student.resident}</td>
-                    <td className={classes.tdStyle}>{student.crc}</td>
-                    <td className={classes.tdStyle}>{student.juz}</td>
                     <td className={classes.tdStyle}>
                       {student.prevMadrasaName}
                     </td>
@@ -110,6 +117,13 @@ function Hifz() {
                     <td className={classes.tdStyle}>{student.schoolName}</td>
                     <td className={classes.tdStyle}>
                       {student.schoolContactNumber}
+                    </td>
+                    <td className={classes.tdStyle}>{student.madrasaClass}</td>
+                    <td className={classes.tdStyle}>{student.marks}</td>
+                    <td className={classes.tdStyle}>{student.nic}</td>
+                    <td className={classes.tdStyle}>{student.contact}</td>
+                    <td className={classes.tdStyle}>
+                      {student.fatherOccupation}
                     </td>
                     <td className={classes.tdStyle}>
                       <button
@@ -133,4 +147,4 @@ function Hifz() {
   );
 }
 
-export default Hifz;
+export default Ilm5th;

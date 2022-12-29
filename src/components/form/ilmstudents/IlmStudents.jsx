@@ -110,6 +110,16 @@ function IlmStudents() {
   ///////////////////////////////////////////////////////////////////////////////
 
   ///////////////////////////////////////////////////////
+  let levels = [
+    "درجہ اولیٰ",
+    "درجہ ثانیہ",
+    "درجہ ثالثہ",
+    "درجہ رابعہ",
+    "درجہ خامسہ",
+    "درجہ سادسہ",
+    "درجہ سابعہ",
+    "درجہ دورہ حدیث",
+  ];
 
   /////////////////////////////////////////////////////////////////
   return (
@@ -277,7 +287,36 @@ function IlmStudents() {
             />
           </label>
           <label className="label">
-            آخری پاس کردہ درجہ
+            آخری پاس کردہ درجہ{" "}
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              height="2em"
+              width="2em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 12l-4-4h8l-4 4z"></path>
+            </svg>
+            <select
+              name="cars"
+              id="cars"
+              className="input"
+              onChange={(event) => {
+                setMadrasaClass(event.target.value);
+              }}
+            >
+              <option value={levels[0]}>{levels[0]}</option>
+              <option value={levels[1]}>{levels[1]}</option>
+              <option value={levels[2]}>{levels[2]}</option>
+              <option value={levels[3]}>{levels[3]}</option>
+              <option value={levels[4]}>{levels[4]}</option>
+              <option value={levels[5]}>{levels[5]}</option>
+              <option value={levels[6]}>{levels[6]}</option>
+              <option value={levels[7]}>{levels[7]}</option>
+            </select>
+            {/*
             <input
               required
               className="input"
@@ -286,7 +325,8 @@ function IlmStudents() {
               onChange={(event) => {
                 setMadrasaClass(event.target.value);
               }}
-            />
+            />{" "}
+            */}
           </label>
           <label className="label">
             نمبرات وتقدیر

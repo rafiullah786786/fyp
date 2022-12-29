@@ -44,34 +44,34 @@ function AdmissionOpen() {
     await updateDoc(userDoc, newFields);
   };
   return (
-    <div>
-      <div
-        onClick={AdmissionOpen}
-        className={`${classes.container}`}
-        style={{ cursor: "pointer" }}
-      >
-        <a className={classes.a}>
-          <div className={classes.button}>
-            <span className={classes.span}>open</span>
-          </div>
-          <div className={classes.sun}></div>
-        </a>
-      </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <div
-        onClick={AdmissionClose}
-        className={`${classes.container}`}
-        style={{ cursor: "pointer", top: "600px" }}
-      >
-        <a className={classes.a}>
-          <div className={classes.button}>
-            <span className={classes.span}>close</span>
-          </div>
-          <div className={classes.sun}></div>
-        </a>
+    <div className="row m-0 p-0">
+      <div className="col-sm-12 m-0 p-0">
+        <div
+          onClick={AdmissionOpen}
+          className={`${classes.container}`}
+          style={{ cursor: "pointer" }}
+        >
+          <a className={classes.a}>
+            <div className={classes.button}>
+              <span className={classes.span}>open</span>
+            </div>
+            <div className={classes.sun}></div>
+          </a>
+        </div>
+        <br />
+
+        <div
+          onClick={AdmissionClose}
+          className={`${classes.container}`}
+          style={{ cursor: "pointer", top: "450px" }}
+        >
+          <a className={classes.a}>
+            <div className={classes.button}>
+              <span className={classes.span}>close</span>
+            </div>
+            <div className={classes.sun}></div>
+          </a>
+        </div>
       </div>
     </div>
   );
