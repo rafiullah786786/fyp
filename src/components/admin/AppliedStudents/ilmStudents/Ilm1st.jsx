@@ -14,12 +14,24 @@ import Loader from "../../../loader/Loader.js";
 function Ilm1st() {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
+  let levels = [
+    "درجہ اولیٰ",
+    "درجہ ثانیہ",
+    "درجہ ثالثہ",
+    "درجہ رابعہ",
+    "درجہ خامسہ",
+    "درجہ سادسہ",
+    "درجہ سابعہ",
+    "درجہ دورہ حدیث",
+  ];
 
   const studentCollection = collection(db, "ilmstudents");
   useEffect(() => {
     const getStudents = async () => {
       const data = await getDocs(studentCollection);
-      setStudents(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      let results = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+      setStudents(results.filter((word) => word.madrasaClass == levels[0]));
+
       setLoading(false);
     };
     getStudents();

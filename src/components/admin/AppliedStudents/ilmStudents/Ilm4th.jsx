@@ -14,16 +14,29 @@ import Loader from "../../../loader/Loader.js";
 function Ilm4th() {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
+    let levels = [
+      "درجہ اولیٰ",
+      "درجہ ثانیہ",
+      "درجہ ثالثہ",
+      "درجہ رابعہ",
+      "درجہ خامسہ",
+      "درجہ سادسہ",
+      "درجہ سابعہ",
+      "درجہ دورہ حدیث",
+    ];
 
   const studentCollection = collection(db, "ilmstudents");
   useEffect(() => {
     const getStudents = async () => {
       const data = await getDocs(studentCollection);
-      setStudents(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+
+       let results = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+       setStudents(results.filter((word) => word.madrasaClass == levels[3]));
       setLoading(false);
     };
     getStudents();
   }, []);
+
   // code for fun of deleting students from the list of students /////////////////////
   const deleteStudents = async (id) => {
     const userDoc = doc(db, "ilmstudents", id);
