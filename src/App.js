@@ -37,6 +37,8 @@ import Ilm5th from "./components/admin/AppliedStudents/ilmStudents/Ilm5th";
 import Ilm6th from "./components/admin/AppliedStudents/ilmStudents/Ilm6th";
 import Ilm7th from "./components/admin/AppliedStudents/ilmStudents/Ilm7th";
 import Ilm8th from "./components/admin/AppliedStudents/ilmStudents/Ilm8th";
+import StdHifz from "./components/admin/AppliedStudents/studentDetail/StdHifz";
+import StdIlm from "./components/admin/AppliedStudents/studentDetail/StdIlm";
 function App() {
   const [isOpen, setIsOpen] = useState(true);
   // const [admissionState, setAdmissionState] = useState("");
@@ -100,6 +102,8 @@ function App() {
 
         <Route path="contact" element={isOpen && <Contact />} />
         <Route path="about" element={isOpen && <About />} />
+        <Route path="/studentHifz/:sid" element={isOpen && <StdHifz />} />
+        <Route path="/studentIlm/:sid" element={isOpen && <StdIlm />} />
         <Route path="admission" element={isOpen && <Admission />}>
           <Route path="welcomePage" element={isOpen && <WelcomePage />} />
           <Route

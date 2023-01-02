@@ -10,6 +10,7 @@ import {
 } from "firebase/firestore";
 import classes from "./Ilm.module.css";
 import Loader from "../../../loader/Loader.js";
+import { Link } from "react-router-dom";
 
 function Ilm6th() {
   const [students, setStudents] = useState([]);
@@ -99,7 +100,7 @@ function Ilm6th() {
               <th className={classes.thStyle} scope="col">
                 والد کا پیشہ
               </th>
-              <th className={classes.thStyle} scope="col">
+              <th colSpan="2" className={classes.thStyle} scope="col">
                 اعمال
               </th>
             </tr>
@@ -145,6 +146,14 @@ function Ilm6th() {
                       >
                         حذ ف کریں
                       </button>
+                    </td>
+                    <td className={classes.tdStyle}>
+                      <Link
+                        to={`/studentIlm/${student.id}`}
+                        className="btn btn-dark"
+                      >
+                        دیکھیں
+                      </Link>
                     </td>
                   </tr>
                 );

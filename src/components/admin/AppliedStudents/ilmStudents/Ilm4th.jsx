@@ -10,28 +10,29 @@ import {
 } from "firebase/firestore";
 import classes from "./Ilm.module.css";
 import Loader from "../../../loader/Loader.js";
+import { Link } from "react-router-dom";
 
 function Ilm4th() {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
-    let levels = [
-      "درجہ اولیٰ",
-      "درجہ ثانیہ",
-      "درجہ ثالثہ",
-      "درجہ رابعہ",
-      "درجہ خامسہ",
-      "درجہ سادسہ",
-      "درجہ سابعہ",
-      "درجہ دورہ حدیث",
-    ];
+  let levels = [
+    "درجہ اولیٰ",
+    "درجہ ثانیہ",
+    "درجہ ثالثہ",
+    "درجہ رابعہ",
+    "درجہ خامسہ",
+    "درجہ سادسہ",
+    "درجہ سابعہ",
+    "درجہ دورہ حدیث",
+  ];
 
   const studentCollection = collection(db, "ilmstudents");
   useEffect(() => {
     const getStudents = async () => {
       const data = await getDocs(studentCollection);
 
-       let results = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-       setStudents(results.filter((word) => word.madrasaClass == levels[3]));
+      let results = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+      setStudents(results.filter((word) => word.madrasaClass == levels[3]));
       setLoading(false);
     };
     getStudents();
@@ -100,7 +101,7 @@ function Ilm4th() {
               <th className={classes.thStyle} scope="col">
                 والد کا پیشہ
               </th>
-              <th className={classes.thStyle} scope="col">
+              <th colSpan="2" className={classes.thStyle} scope="col">
                 اعمال
               </th>
             </tr>
@@ -146,6 +147,14 @@ function Ilm4th() {
                       >
                         حذ ف کریں
                       </button>
+                    </td>
+                    <td className={classes.tdStyle}>
+                      <Link
+                        to={`/studentIlm/${student.id}`}
+                        className="btn btn-dark"
+                      >
+                        دیکھیں
+                      </Link>
                     </td>
                   </tr>
                 );

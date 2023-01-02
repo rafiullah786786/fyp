@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { db } from "../../../../FirebaseConfig.js";
 import {
   collection,
@@ -23,7 +24,7 @@ function Hifz() {
     };
     getStudents();
   }, []);
-  console.log(students);
+  // console.log(students);
   // code for fun of deleting students from the list of students /////////////////////
   const deleteStudents = async (id) => {
     const userDoc = doc(db, "hifzEQuranStudents", id);
@@ -80,7 +81,7 @@ function Hifz() {
               <th className={classes.thStyle} scope="col">
                 سکول کا رابطہ نمبر
               </th>
-              <th className={classes.thStyle} scope="col">
+              <th colSpan="2" className={classes.thStyle} scope="col">
                 اعمال
               </th>
             </tr>
@@ -120,6 +121,14 @@ function Hifz() {
                       >
                         حذ ف کریں
                       </button>
+                    </td>
+                    <td className={classes.tdStyle}>
+                      <Link
+                        to={`/studentHifz/${student.id}`}
+                        className="btn btn-dark"
+                      >
+                        view
+                      </Link>
                     </td>
                   </tr>
                 );
