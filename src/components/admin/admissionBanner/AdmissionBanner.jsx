@@ -5,7 +5,7 @@ import "./AdmissionBanner.css";
 function AdmissionBanner() {
   const navigate = useNavigate();
   const applyHandler = () => {
-    navigate("admission/welcomePage");
+    navigate("../admission/welcomePage");
   };
   return (
     <div className="row  mt-5 text-center m-0 p-0">

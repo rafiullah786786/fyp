@@ -4,7 +4,11 @@ import "./Navbar.css";
 import React from "react";
 import logo from "../../img/logo.png";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 function Navbar(props) {
+  const navigate = useNavigate();
+
   const navRef = useRef();
 
   const showNavbar = () => {
@@ -16,10 +20,31 @@ function Navbar(props) {
     navRef.current.classList.toggle("responsive_nav");
     props.data(true);
   };
+  let token = localStorage.getItem("token");
+  let homeOrRegister;
+
+  const [login, setLogin] = useState(false);
+  const [adminLogin, setAdminLogin] = useState(false);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setLogin(false);
+      homeOrRegister = "/";
+    } else {
+      setLogin(true);
+      homeOrRegister = "home";
+    }
+    const adminToken = localStorage.getItem("adminToken");
+    if (!adminToken) {
+      setAdminLogin(false);
+    } else {
+      setAdminLogin(true);
+    }
+  }, [login]);
 
   return (
     <header className="row p-0 m-0">
-      <Link to="/">
+      <Link to={homeOrRegister}>
         <img
           style={{ width: "70px", height: "70px", marginLeft: "10px" }}
           src={logo}
@@ -35,17 +60,34 @@ function Navbar(props) {
         <Link to="/about" onClick={closeNavbar}>
           قواعدِ وضوابط جامعہ
         </Link>
-        <Link to="admission/welcomePage" onClick={closeNavbar}>
-          داخلہ
-        </Link>
+        {login && (
+          <Link to="admission/welcomePage" onClick={closeNavbar}>
+            داخلہ
+          </Link>
+        )}
+
         <Link to="/courses" onClick={closeNavbar}>
           کورسز
         </Link>
         <Link to="/contact" onClick={closeNavbar}>
           رابطہ
         </Link>
-        <Link to="/students/studentsWelcome " onClick={closeNavbar}>
-          منتظم
+        <Link to="/bank" onClick={closeNavbar}>
+          بینک اکاؤنٹ
+        </Link>
+        {adminLogin && (
+          <Link to="/students/studentsWelcome " onClick={closeNavbar}>
+            منتظم
+          </Link>
+        )}
+        <Link to="/login " onClick={closeNavbar}>
+          Login
+        </Link>
+        <Link to="/register " onClick={closeNavbar}>
+          Register
+        </Link>
+        <Link to="/logout " onClick={closeNavbar}>
+          Logout
         </Link>
         <button className="nav-btn nav-close-btn" onClick={closeNavbar}>
           <FaTimes />

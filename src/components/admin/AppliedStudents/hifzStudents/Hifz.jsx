@@ -16,6 +16,7 @@ function Hifz() {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
   const studentCollection = collection(db, "hifzEQuranStudents");
+
   useEffect(() => {
     const getStudents = async () => {
       const data = await getDocs(studentCollection);

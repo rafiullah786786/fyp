@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import AdmissionBanner from "../admin/admissionBanner/AdmissionBanner";
-import "./Name.css";
+import "./Home.css";
 import { db } from "../../FirebaseConfig";
 import {
   collection,
@@ -11,10 +11,12 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
-function Name() {
+function Home() {
   const [admissionState, setAdmissionState] = useState([]);
   const studentCollection = collection(db, "admissionOpen");
+  const navigate = useNavigate();
   useEffect(() => {
     const getStudents = async () => {
       const data = await getDocs(studentCollection);
@@ -29,7 +31,6 @@ function Name() {
     };
     getStudents();
   }, []);
-  console.log(admissionState);
 
   return (
     <>
@@ -60,4 +61,4 @@ function Name() {
   );
 }
 
-export default Name;
+export default Home;

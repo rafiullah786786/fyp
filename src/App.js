@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
-import Name from "./components/madrasaName/Name";
+import Home from "./components/home/Home";
 import Admission from "./components/form/Admission";
 import Students from "./components/admin/Students";
 import Contact from "./components/contact/Contact";
@@ -39,6 +39,12 @@ import Ilm7th from "./components/admin/AppliedStudents/ilmStudents/Ilm7th";
 import Ilm8th from "./components/admin/AppliedStudents/ilmStudents/Ilm8th";
 import StdHifz from "./components/admin/AppliedStudents/studentDetail/StdHifz";
 import StdIlm from "./components/admin/AppliedStudents/studentDetail/StdIlm";
+import Bank from "./components/bank/Bank";
+import Register from "./components/register/Register";
+import "react-toastify/dist/ReactToastify.css";
+import Login from "./components/login/Login";
+import Logout from "./components/logout/Logout";
+import HomeWelcomePage from "./components/welcomePage/WelcomePage";
 function App() {
   const [isOpen, setIsOpen] = useState(true);
   // const [admissionState, setAdmissionState] = useState("");
@@ -47,6 +53,9 @@ function App() {
     setIsOpen(data);
   };
   const navigate = useNavigate();
+  const setLoginState = (data) => {
+    console.log(data);
+  };
   // geting admission open state from server to create a admission open message
   // useEffect(() => {
   //   const getStudents = async () => {
@@ -89,6 +98,12 @@ function App() {
             </button>
             <button
               className="btn btn-primary m-3  rounded-circle     mainPageBtn  bg-secondary "
+              onClick={() => navigate("./bank")}
+            >
+              بینک اکاؤنٹ
+            </button>
+            <button
+              className="btn btn-primary m-3  rounded-circle     mainPageBtn  bg-secondary "
               onClick={() => navigate("./students")}
             >
               منتظم
@@ -98,9 +113,24 @@ function App() {
       )}
 
       <Routes>
-        {isOpen && <Route path="/" element={isOpen && <Name />} />}
+        {isOpen && <Route path="/" element={isOpen && <HomeWelcomePage />} />}
+        {isOpen && <Route path="/home" element={isOpen && <Home />} />}
+        {isOpen && <Route path="/register" element={isOpen && <Register />} />}
+        {isOpen && (
+          <Route
+            path="/login"
+            element={isOpen && <Login propsdata={setLoginState} />}
+          />
+        )}
+        {isOpen && (
+          <Route
+            path="/logout"
+            element={isOpen && <Logout propsdata={setLoginState} />}
+          />
+        )}
 
         <Route path="contact" element={isOpen && <Contact />} />
+        <Route path="bank" element={isOpen && <Bank />} />
         <Route path="about" element={isOpen && <About />} />
         <Route path="/studentHifz/:sid" element={isOpen && <StdHifz />} />
         <Route path="/studentIlm/:sid" element={isOpen && <StdIlm />} />
