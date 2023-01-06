@@ -46,7 +46,7 @@ function Navbar(props) {
     <header className="row p-0 m-0">
       <Link to={homeOrRegister}>
         <img
-          style={{ width: "70px", height: "70px", marginLeft: "10px" }}
+          style={{ width: "70px", height: "113px", marginLeft: "10px" }}
           src={logo}
           alt=""
         />
@@ -81,13 +81,13 @@ function Navbar(props) {
           </Link>
         )}
         <Link to="/login " onClick={closeNavbar}>
-          Login
+          لاگ ان
         </Link>
-        <Link to="/register " onClick={closeNavbar}>
-          Register
+        <Link to="/ " onClick={closeNavbar}>
+          رجسٹر کریں۔
         </Link>
         <Link to="/logout " onClick={closeNavbar}>
-          Logout
+          لاگ آوٹ
         </Link>
         <button className="nav-btn nav-close-btn" onClick={closeNavbar}>
           <FaTimes />

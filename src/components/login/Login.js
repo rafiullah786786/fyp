@@ -83,7 +83,7 @@ function Login(props) {
       });
   };
   const handlerNavigate = () => {
-    navigate("/register");
+    navigate("/");
   };
   return (
     <div className="container">
@@ -91,7 +91,8 @@ function Login(props) {
         <div className="col-sm-3"></div>
         <div className="col-sm-6 mt-5">
           <form onClick={submitHandler}>
-            <h1>Login Here</h1>
+            <h1 className="text-center">لاگ ان کریں</h1>
+
             <div class="form-group mt-5">
               <label for="exampleInputEmail1">Email address</label>
               <input
@@ -119,6 +120,10 @@ function Login(props) {
             <button type="submit" class="btn btn-primary">
               Login
             </button>
+            <h5>
+              اگر آپ نے اکاؤنٹ پھلے سے بنایا نہیں ہے تو نیچے دیے گئے بٹن پر کلک
+              کریں اور اپنے آپ کو رجسٹر کریں۔
+            </h5>
             <button onClick={handlerNavigate} class="btn btn-primary m-2">
               Create a new account
             </button>

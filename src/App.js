@@ -113,9 +113,8 @@ function App() {
       )}
 
       <Routes>
-        {isOpen && <Route path="/" element={isOpen && <HomeWelcomePage />} />}
         {isOpen && <Route path="/home" element={isOpen && <Home />} />}
-        {isOpen && <Route path="/register" element={isOpen && <Register />} />}
+        {isOpen && <Route path="/" element={isOpen && <Register />} />}
         {isOpen && (
           <Route
             path="/login"

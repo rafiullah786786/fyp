@@ -9,7 +9,7 @@ function Logout(props) {
   const token = localStorage.getItem("token");
   const adminToken = localStorage.getItem("adminToken");
   if (!token) {
-    navigate("/");
+    navigate("/home");
   }
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function Logout(props) {
         draggable: true,
         progress: undefined,
       });
-      navigate("/");
+      navigate("/home");
     }
 
     if (token) {
@@ -40,7 +40,7 @@ function Logout(props) {
         draggable: true,
         progress: undefined,
       });
-      navigate("/");
+      navigate("/home");
     }
   }, [navigate]);
   return <div></div>;
