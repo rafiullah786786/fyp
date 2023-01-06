@@ -53,55 +53,55 @@ function Home() {
         </div>
         <div className="text-center">
           <img
-            className="m-5 img-fluid"
+            className="m-5 img  img-fluid"
             style={{ width: "370px", height: "370px", borderRadius: "236px" }}
             src="https://firebasestorage.googleapis.com/v0/b/madrasa-management-system.appspot.com/o/images%2FWhatsApp%202022-12-26%20at%2022.01.20.jpg?alt=media&token=6acf225c-486f-46f7-b73a-afe5886f30b3"
             alt=""
           />
           <img
-            className="m-5 img-fluid"
+            className="m-5 img  img-fluid"
             style={{ width: "370px", height: "370px", borderRadius: "236px" }}
             src="https://firebasestorage.googleapis.com/v0/b/madrasa-management-system.appspot.com/o/images%2FWhatsApp%20Image%20.19.jpg?alt=media&token=2de98ecd-19cc-4680-8519-a38a451601db"
             alt=""
           />
           <img
-            className="m-5 img-fluid"
+            className="m-5 img  img-fluid"
             style={{ width: "370px", height: "370px", borderRadius: "236px" }}
             src="https://firebasestorage.googleapis.com/v0/b/madrasa-management-system.appspot.com/o/images%2FWhatsApp%20Image%202022-12-2%2022.01.22.jpg?alt=media&token=b7ae69b6-2e05-4f9e-a24f-3c280e8846dd"
             alt=""
           />
           <img
-            className="m-5 img-fluid"
+            className="m-5 img  img-fluid"
             style={{ width: "370px", height: "370px", borderRadius: "236px" }}
             src="https://firebasestorage.googleapis.com/v0/b/madrasa-management-system.appspot.com/o/images%2FWhatsApp%20Image%202022-12-26%20at%2022.01.16.jpg?alt=media&token=cec99945-be62-45bd-91fa-bd7f9a53df38"
             alt=""
           />
           <img
-            className="m-5 img-fluid"
+            className="m-5 img  img-fluid"
             style={{ width: "370px", height: "370px", borderRadius: "236px" }}
             src="https://firebasestorage.googleapis.com/v0/b/madrasa-management-system.appspot.com/o/images%2FWhatsApp%20Image%202022-12-26%20at%2022.01.18.jpg?alt=media&token=6bc133e2-49eb-475f-b8da-fc60095366d5"
             alt=""
           />
           <img
-            className="m-5 img-fluid"
+            className="m-5 img  img-fluid"
             style={{ width: "370px", height: "370px", borderRadius: "236px" }}
             src="https://firebasestorage.googleapis.com/v0/b/madrasa-management-system.appspot.com/o/images%2FWhatsApp%20Image%202022-12-26%20at%2022.01.19.jpg?alt=media&token=35f62e46-5b6b-4025-adbb-e33426f0bd36"
             alt=""
           />
           <img
-            className="m-5 img-fluid"
+            className="m-5 img  img-fluid"
             style={{ width: "370px", height: "370px", borderRadius: "236px" }}
             src="https://firebasestorage.googleapis.com/v0/b/madrasa-management-system.appspot.com/o/images%2FWhatsApp%20Image%202022-12-26%20at%2022.01.20.jpg?alt=media&token=a36c5c0b-30d3-4308-bfe7-11b4ca5f44cd"
             alt=""
           />
           <img
-            className="m-5 img-fluid"
+            className="m-5 img  img-fluid"
             style={{ width: "370px", height: "370px", borderRadius: "236px" }}
             src="https://firebasestorage.googleapis.com/v0/b/madrasa-management-system.appspot.com/o/images%2FWhatsApp%20Image%202022-12-26%20at%2022.01.21.jpg?alt=media&token=c5208ae6-70b2-43a2-a22d-082b9c6ef7ea"
             alt=""
           />
           <img
-            className="m-5 img-fluid"
+            className="m-5 img  img-fluid"
             style={{ width: "370px", height: "370px", borderRadius: "236px" }}
             src="https://firebasestorage.googleapis.com/v0/b/madrasa-management-system.appspot.com/o/images%2FWhatsApp%20Image%202022-12-26%20at%2022.01.23.jpg?alt=media&token=59f8a575-95fd-4a3b-8f27-86ed74ea92fe"
             alt=""
