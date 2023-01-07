@@ -14,21 +14,19 @@ function Register() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
-  useEffect(() => {
-    if (!token) {
-    } else {
-      toast.success("you are Allreday Login", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-      navigate("/home");
-    }
-  }, []);
+  if (!token) {
+  } else {
+    toast.success("you are Allreday Login", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+    navigate("/home");
+  }
 
   const nameHandler = (e) => {
     setName(e.target.value);
