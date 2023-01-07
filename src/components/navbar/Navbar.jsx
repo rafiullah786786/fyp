@@ -46,7 +46,7 @@ function Navbar(props) {
     <header className="row p-0 m-0">
       <Link to={homeOrRegister}>
         <img
-          style={{ width: "50px", height: "50px", marginLeft: "10px" }}
+          style={{ width: "76px", height: "76px", marginLeft: "10px" }}
           src={logo}
           alt=""
         />

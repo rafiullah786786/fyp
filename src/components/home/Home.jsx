@@ -50,6 +50,17 @@ function Home() {
           <h2 style={{ "text-align": "center" }}> باڑہ گیٹ پشاور </h2>
         </div>
       </div>
+      <div className="row p-0 m-0 mt-2">
+        <div className="col-sm-12 m-0 p-0 ">
+          <marquee direction="left" loop="1" scrollamount="10">
+            <img
+              style={{ width: "600px", height: "100px" }}
+              src="https://firebasestorage.googleapis.com/v0/b/madrasa-management-system.appspot.com/o/images%2FWhatsApp_Image_2023-01-02_at_04.02.38-removebg-preview.png?alt=media&token=4adbc606-c290-4595-a13e-a970b97e3ddf"
+              alt=""
+            />
+          </marquee>
+        </div>
+      </div>
       <div className="row p-0 m-0">
         <div className="col-sm-12 p-0 m-0">
           <div className="text-center">
