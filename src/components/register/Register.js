@@ -51,6 +51,7 @@ function Register() {
         }
       )
       .then((res) => {
+        localStorage.setItem("token", res.data.idToken);
         toast.success("you are logged in successfully", {
           position: "top-right",
           autoClose: 5000,

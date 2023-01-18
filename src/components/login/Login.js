@@ -1,43 +1,43 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { db } from "../../FirebaseConfig.js";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
 
 function Login(props) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [adminEmail, setAdminEmail] = useState("");
+  const [adminPassword, setAdminPassword] = useState("");
+  // admin login data fetching from server
+  const adminCollection = collection(db, "admin");
+
+  useEffect(() => {
+    const getStudents = async () => {
+      const data = await getDocs(adminCollection);
+      setAdminEmail(
+        data.docs[0]._document.data.value.mapValue.fields.email.stringValue
+      );
+      setAdminPassword(
+        data.docs[0]._document.data.value.mapValue.fields.password.stringValue
+      );
+    };
+    getStudents();
+  }, []);
   const navigate = useNavigate();
   //admin login code start from here
-  if (email == "admin@gmail.com" && password == "admin786") {
-    localStorage.setItem("adminToken", "786786");
-    toast.success("Admin login successfully ", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-  }
-  //normal login code start from here
-  const token = localStorage.getItem("token");
-  if (!token) {
-  } else {
-    toast.success("you are Allreday Login", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-    navigate("/home");
-  }
+
   const emailHandler = (e) => {
     setEmail(e.target.value);
   };
@@ -81,6 +81,34 @@ function Login(props) {
           progress: undefined,
         });
       });
+    const token = localStorage.getItem("token");
+    if (email == adminEmail && password == adminPassword) {
+      localStorage.setItem("adminToken", "786786");
+      toast.success("Admin login successfully ", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      navigate("/students/studentsWelcome");
+    }
+    //normal login code start from here
+    else if (!token) {
+    } else {
+      toast.success("you are Allready Login", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      navigate("/home");
+    }
   };
   const handlerNavigate = () => {
     navigate("/");
@@ -90,7 +118,7 @@ function Login(props) {
       <div className="row">
         <div className="col-sm-3"></div>
         <div className="col-sm-6 mt-5">
-          <form onClick={submitHandler}>
+          <form onSubmit={submitHandler}>
             <h1 className="text-center">لاگ ان کریں</h1>
 
             <div class="form-group mt-5">

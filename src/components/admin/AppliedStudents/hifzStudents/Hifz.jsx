@@ -25,6 +25,7 @@ function Hifz() {
     };
     getStudents();
   }, []);
+  console.log(students);
   // console.log(students);
   // code for fun of deleting students from the list of students /////////////////////
   const deleteStudents = async (id) => {

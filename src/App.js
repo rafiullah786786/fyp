@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
@@ -56,6 +56,24 @@ function App() {
   const setLoginState = (data) => {
     console.log(data);
   };
+  //autherization code start from here ////////////////////////////////
+  const [login, setLogin] = useState(false);
+  const [adminLogin, setAdminLogin] = useState(false);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setLogin(false);
+    } else {
+      setLogin(true);
+    }
+    const adminToken = localStorage.getItem("adminToken");
+    if (!adminToken) {
+      setAdminLogin(false);
+    } else {
+      setAdminLogin(true);
+    }
+  }, [login]);
+  //////////////////autherization code end from here///////////////////
   // geting admission open state from server to create a admission open message
   // useEffect(() => {
   //   const getStudents = async () => {
@@ -78,12 +96,14 @@ function App() {
             >
               قواعدِ وضوابط
             </button>
-            <button
-              className="btn btn-primary m-3  rounded-circle     mainPageBtn  bg-secondary "
-              onClick={() => navigate("./admission")}
-            >
-              داخلہ
-            </button>
+            {login && (
+              <button
+                className="btn btn-primary m-3  rounded-circle     mainPageBtn  bg-secondary "
+                onClick={() => navigate("./admission")}
+              >
+                داخلہ
+              </button>
+            )}
             <button
               className="btn btn-primary m-3  rounded-circle    mainPageBtn  bg-secondary "
               onClick={() => navigate("./courses")}
@@ -102,11 +122,31 @@ function App() {
             >
               بینک اکاؤنٹ
             </button>
+            {adminLogin && (
+              <button
+                className="btn btn-primary m-3  rounded-circle     mainPageBtn  bg-secondary "
+                onClick={() => navigate("./students")}
+              >
+                منتظم
+              </button>
+            )}
             <button
               className="btn btn-primary m-3  rounded-circle     mainPageBtn  bg-secondary "
-              onClick={() => navigate("./students")}
+              onClick={() => navigate("./login")}
             >
-              منتظم
+              لاگ ان{" "}
+            </button>
+            <button
+              className="btn btn-primary m-3  rounded-circle     mainPageBtn  bg-secondary "
+              onClick={() => navigate("./")}
+            >
+              رجسٹر کریں۔
+            </button>
+            <button
+              className="btn btn-primary m-3  rounded-circle     mainPageBtn  bg-secondary "
+              onClick={() => navigate("./logout")}
+            >
+              لاگ آوٹ
             </button>
           </div>
         </div>

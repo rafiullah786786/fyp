@@ -1,6 +1,450 @@
-[
-    {
-        "admissionOpenState": "false",
-        "id": "786"
+{
+    "_firestore": {
+        "app": {
+            "_isDeleted": false,
+            "_options": {
+                "apiKey": "AIzaSyCtNJAi8U0VSV7UzR5IiXRYPpsXwZ935RU",
+                "authDomain": "madrasa-management-system.firebaseapp.com",
+                "databaseURL": "https://madrasa-management-system-default-rtdb.firebaseio.com",
+                "projectId": "madrasa-management-system",
+                "storageBucket": "madrasa-management-system.appspot.com",
+                "messagingSenderId": "817571513533",
+                "appId": "1:817571513533:web:5782ba22693d4d7702e3d4",
+                "measurementId": "G-B23RD8CNYL"
+            },
+            "_config": {
+                "name": "[DEFAULT]",
+                "automaticDataCollectionEnabled": false
+            },
+            "_name": "[DEFAULT]",
+            "_automaticDataCollectionEnabled": false,
+            "_container": {
+                "name": "[DEFAULT]",
+                "providers": {}
+            }
+        },
+        "databaseId": {
+            "projectId": "madrasa-management-system",
+            "database": "(default)"
+        },
+        "settings": {
+            "host": "firestore.googleapis.com",
+            "ssl": true,
+            "ignoreUndefinedProperties": false,
+            "cacheSizeBytes": 41943040,
+            "experimentalForceLongPolling": false,
+            "experimentalAutoDetectLongPolling": false,
+            "useFetchStreams": true
+        }
+    },
+    "_userDataWriter": {
+        "firestore": {
+            "app": {
+                "_isDeleted": false,
+                "_options": {
+                    "apiKey": "AIzaSyCtNJAi8U0VSV7UzR5IiXRYPpsXwZ935RU",
+                    "authDomain": "madrasa-management-system.firebaseapp.com",
+                    "databaseURL": "https://madrasa-management-system-default-rtdb.firebaseio.com",
+                    "projectId": "madrasa-management-system",
+                    "storageBucket": "madrasa-management-system.appspot.com",
+                    "messagingSenderId": "817571513533",
+                    "appId": "1:817571513533:web:5782ba22693d4d7702e3d4",
+                    "measurementId": "G-B23RD8CNYL"
+                },
+                "_config": {
+                    "name": "[DEFAULT]",
+                    "automaticDataCollectionEnabled": false
+                },
+                "_name": "[DEFAULT]",
+                "_automaticDataCollectionEnabled": false,
+                "_container": {
+                    "name": "[DEFAULT]",
+                    "providers": {}
+                }
+            },
+            "databaseId": {
+                "projectId": "madrasa-management-system",
+                "database": "(default)"
+            },
+            "settings": {
+                "host": "firestore.googleapis.com",
+                "ssl": true,
+                "ignoreUndefinedProperties": false,
+                "cacheSizeBytes": 41943040,
+                "experimentalForceLongPolling": false,
+                "experimentalAutoDetectLongPolling": false,
+                "useFetchStreams": true
+            }
+        }
+    },
+    "_snapshot": {
+        "query": {
+            "path": {
+                "segments": [
+                    "admin"
+                ],
+                "offset": 0,
+                "len": 1
+            },
+            "collectionGroup": null,
+            "explicitOrderBy": [],
+            "filters": [],
+            "limit": null,
+            "limitType": "F",
+            "startAt": null,
+            "endAt": null,
+            "_t": [
+                {
+                    "field": {
+                        "segments": [
+                            "__name__"
+                        ],
+                        "offset": 0,
+                        "len": 1
+                    },
+                    "dir": "asc"
+                }
+            ],
+            "wt": {
+                "path": {
+                    "segments": [
+                        "admin"
+                    ],
+                    "offset": 0,
+                    "len": 1
+                },
+                "collectionGroup": null,
+                "orderBy": [
+                    {
+                        "field": {
+                            "segments": [
+                                "__name__"
+                            ],
+                            "offset": 0,
+                            "len": 1
+                        },
+                        "dir": "asc"
+                    }
+                ],
+                "filters": [],
+                "limit": null,
+                "startAt": null,
+                "endAt": null,
+                "ht": "admin|f:|ob:__name__asc"
+            }
+        },
+        "docs": {
+            "keyedMap": {
+                "root": {
+                    "key": {
+                        "path": {
+                            "segments": [
+                                "projects",
+                                "madrasa-management-system",
+                                "databases",
+                                "(default)",
+                                "documents",
+                                "admin",
+                                "H4DfuoeUZFCx5ySGtoct"
+                            ],
+                            "offset": 5,
+                            "len": 2
+                        }
+                    },
+                    "value": {
+                        "key": {
+                            "path": {
+                                "segments": [
+                                    "projects",
+                                    "madrasa-management-system",
+                                    "databases",
+                                    "(default)",
+                                    "documents",
+                                    "admin",
+                                    "H4DfuoeUZFCx5ySGtoct"
+                                ],
+                                "offset": 5,
+                                "len": 2
+                            }
+                        },
+                        "documentType": 1,
+                        "version": {
+                            "timestamp": {
+                                "seconds": 1674065888,
+                                "nanoseconds": 232196000
+                            }
+                        },
+                        "readTime": {
+                            "timestamp": {
+                                "seconds": 1674067954,
+                                "nanoseconds": 812076000
+                            }
+                        },
+                        "data": {
+                            "value": {
+                                "mapValue": {
+                                    "fields": {
+                                        "password": {
+                                            "stringValue": "admin786"
+                                        },
+                                        "email": {
+                                            "stringValue": "admin@gmail.com"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "documentState": 0
+                    },
+                    "color": false,
+                    "left": {
+                        "size": 0
+                    },
+                    "right": {
+                        "size": 0
+                    },
+                    "size": 1
+                }
+            },
+            "sortedSet": {
+                "root": {
+                    "key": {
+                        "key": {
+                            "path": {
+                                "segments": [
+                                    "projects",
+                                    "madrasa-management-system",
+                                    "databases",
+                                    "(default)",
+                                    "documents",
+                                    "admin",
+                                    "H4DfuoeUZFCx5ySGtoct"
+                                ],
+                                "offset": 5,
+                                "len": 2
+                            }
+                        },
+                        "documentType": 1,
+                        "version": {
+                            "timestamp": {
+                                "seconds": 1674065888,
+                                "nanoseconds": 232196000
+                            }
+                        },
+                        "readTime": {
+                            "timestamp": {
+                                "seconds": 1674067954,
+                                "nanoseconds": 812076000
+                            }
+                        },
+                        "data": {
+                            "value": {
+                                "mapValue": {
+                                    "fields": {
+                                        "password": {
+                                            "stringValue": "admin786"
+                                        },
+                                        "email": {
+                                            "stringValue": "admin@gmail.com"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "documentState": 0
+                    },
+                    "value": null,
+                    "color": false,
+                    "left": {
+                        "size": 0
+                    },
+                    "right": {
+                        "size": 0
+                    },
+                    "size": 1
+                }
+            }
+        },
+        "oldDocs": {
+            "keyedMap": {
+                "root": {
+                    "size": 0
+                }
+            },
+            "sortedSet": {
+                "root": {
+                    "size": 0
+                }
+            }
+        },
+        "docChanges": [
+            {
+                "type": 0,
+                "doc": {
+                    "key": {
+                        "path": {
+                            "segments": [
+                                "projects",
+                                "madrasa-management-system",
+                                "databases",
+                                "(default)",
+                                "documents",
+                                "admin",
+                                "H4DfuoeUZFCx5ySGtoct"
+                            ],
+                            "offset": 5,
+                            "len": 2
+                        }
+                    },
+                    "documentType": 1,
+                    "version": {
+                        "timestamp": {
+                            "seconds": 1674065888,
+                            "nanoseconds": 232196000
+                        }
+                    },
+                    "readTime": {
+                        "timestamp": {
+                            "seconds": 1674067954,
+                            "nanoseconds": 812076000
+                        }
+                    },
+                    "data": {
+                        "value": {
+                            "mapValue": {
+                                "fields": {
+                                    "password": {
+                                        "stringValue": "admin786"
+                                    },
+                                    "email": {
+                                        "stringValue": "admin@gmail.com"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "documentState": 0
+                }
+            }
+        ],
+        "mutatedKeys": {
+            "data": {
+                "root": {
+                    "size": 0
+                }
+            }
+        },
+        "fromCache": false,
+        "syncStateChanged": true,
+        "excludesMetadataChanges": false,
+        "hasCachedResults": true
+    },
+    "metadata": {
+        "hasPendingWrites": false,
+        "fromCache": false
+    },
+    "query": {
+        "converter": null,
+        "_query": {
+            "path": {
+                "segments": [
+                    "admin"
+                ],
+                "offset": 0,
+                "len": 1
+            },
+            "collectionGroup": null,
+            "explicitOrderBy": [],
+            "filters": [],
+            "limit": null,
+            "limitType": "F",
+            "startAt": null,
+            "endAt": null,
+            "_t": [
+                {
+                    "field": {
+                        "segments": [
+                            "__name__"
+                        ],
+                        "offset": 0,
+                        "len": 1
+                    },
+                    "dir": "asc"
+                }
+            ],
+            "wt": {
+                "path": {
+                    "segments": [
+                        "admin"
+                    ],
+                    "offset": 0,
+                    "len": 1
+                },
+                "collectionGroup": null,
+                "orderBy": [
+                    {
+                        "field": {
+                            "segments": [
+                                "__name__"
+                            ],
+                            "offset": 0,
+                            "len": 1
+                        },
+                        "dir": "asc"
+                    }
+                ],
+                "filters": [],
+                "limit": null,
+                "startAt": null,
+                "endAt": null,
+                "ht": "admin|f:|ob:__name__asc"
+            }
+        },
+        "type": "collection",
+        "firestore": {
+            "app": {
+                "_isDeleted": false,
+                "_options": {
+                    "apiKey": "AIzaSyCtNJAi8U0VSV7UzR5IiXRYPpsXwZ935RU",
+                    "authDomain": "madrasa-management-system.firebaseapp.com",
+                    "databaseURL": "https://madrasa-management-system-default-rtdb.firebaseio.com",
+                    "projectId": "madrasa-management-system",
+                    "storageBucket": "madrasa-management-system.appspot.com",
+                    "messagingSenderId": "817571513533",
+                    "appId": "1:817571513533:web:5782ba22693d4d7702e3d4",
+                    "measurementId": "G-B23RD8CNYL"
+                },
+                "_config": {
+                    "name": "[DEFAULT]",
+                    "automaticDataCollectionEnabled": false
+                },
+                "_name": "[DEFAULT]",
+                "_automaticDataCollectionEnabled": false,
+                "_container": {
+                    "name": "[DEFAULT]",
+                    "providers": {}
+                }
+            },
+            "databaseId": {
+                "projectId": "madrasa-management-system",
+                "database": "(default)"
+            },
+            "settings": {
+                "host": "firestore.googleapis.com",
+                "ssl": true,
+                "ignoreUndefinedProperties": false,
+                "cacheSizeBytes": 41943040,
+                "experimentalForceLongPolling": false,
+                "experimentalAutoDetectLongPolling": false,
+                "useFetchStreams": true
+            }
+        },
+        "_path": {
+            "segments": [
+                "admin"
+            ],
+            "offset": 0,
+            "len": 1
+        }
     }
-]
+}

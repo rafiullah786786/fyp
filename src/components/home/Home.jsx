@@ -30,7 +30,7 @@ function Home() {
       }
     };
     getStudents();
-  }, []);
+  }, [admissionState]);
 
   return (
     <>
@@ -50,7 +50,7 @@ function Home() {
           <h2 style={{ "text-align": "center" }}> باڑہ گیٹ پشاور </h2>
         </div>
       </div>
-      <div className="row p-0 m-0 mt-2">
+      <div className="row p-0 m-0 mt-4">
         <div className="col-sm-12 m-0 p-0 ">
           <marquee direction="left" loop="1" scrollamount="10">
             <img
@@ -61,6 +61,13 @@ function Home() {
           </marquee>
         </div>
       </div>
+      {admissionState && (
+        <div>
+          <div>
+            <AdmissionBanner />
+          </div>
+        </div>
+      )}
       <div className="row p-0 m-0">
         <div className="col-sm-12 p-0 m-0">
           <div className="text-center">
@@ -119,13 +126,6 @@ function Home() {
               alt=""
             />
           </div>
-          {admissionState && (
-            <div>
-              <div>
-                <AdmissionBanner />
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </>

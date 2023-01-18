@@ -20,7 +20,6 @@ function Navbar(props) {
     navRef.current.classList.toggle("responsive_nav");
     props.data(true);
   };
-  let token = localStorage.getItem("token");
   let homeOrRegister;
 
   const [login, setLogin] = useState(false);

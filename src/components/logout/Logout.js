@@ -43,7 +43,6 @@ function Logout(props) {
       navigate("/home");
     }
   }, [navigate]);
-  return <div></div>;
 }
 
 export default Logout;
